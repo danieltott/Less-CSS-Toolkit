@@ -41,6 +41,13 @@
     background-clip: @clip;
 }
 
+.background-origin(@origin){
+    -moz-origin-size: @origin;
+     -o-origin-size: @origin;
+     -webkit-origin-size: @origin;
+     origin-size: @origin;
+}
+
 .background-size(@size){
     -moz-background-size: @size;
      -o-background-size: @size;
@@ -57,8 +64,11 @@
     border-image: @val;
 }
 
-.border-radius(@radius: 5px) {
-    -moz-border-radius: @radius; -webkit-border-radius: @radius; -o-border-radius: @radius; border-radius: @radius;
+.border-radius(@radius) {
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
 }
 
 .box-flex(@flex: 1){
@@ -69,7 +79,9 @@
     box-flex: @flex;
 }
 .box-shadow(@shadow){
-    -webkit-box-shadow: @shadow; -moz-box-shadow: @shadow; -o-box-shadow: @shadow; box-shadow: @shadow;
+    -webkit-box-shadow: @shadow;
+    -moz-box-shadow: @shadow;
+    box-shadow: @shadow;
 }
 
 .box-sizing(@sizing){
@@ -78,7 +90,7 @@
     box-sizing: @sizing;
 }
 
-.columns(@columnValue, @gap, @rule: none){
+.columns(@columnValue, @gap: normal, @rule: none){
     
     -moz-columns: @columnValue;
     -moz-column-gap:@gap;
@@ -87,10 +99,6 @@
     -webkit-columns: @columnValue;
     -webkit-column-gap:@gap;
     -webkit-column-rule: @rule;
-
-    -o-columns: @columnValue;
-    -o-column-gap:@gap;
-    -o-column-rule: @rule;
     
     columns: @columnValue;
     column-gap:@gap;

@@ -19,7 +19,7 @@ Mixins:
 
 .border-image(@img, @number, @repeat: stretch)
 
-.border-radius(@radius: 5px)
+.border-radius(@radius)
 
 .box-flex(@flex: 1)
 
