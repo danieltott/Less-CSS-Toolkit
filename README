@@ -30,11 +30,10 @@ Mixins:
 .columns(@columnValue, @gap, @rule: none)
 
 .easyclear
-(should be applied to :after psuedo-element IE element:after{ .easyclear; } )
 
 .flexbox(@orient: horizontal, @pack: start, @align: stretch, @direction: normal)
 
-.gradient(@startcolor, @stopcolor, @startpoint: "left top", @endpoint: "left bottom")
+.gradient(@startcolor, @stopcolor, @startpoint: center top, @endpoint: center bottom)
 (simple, two-color gradient. defaults to top-to-bottom)
 
 .transform(@transform)
