@@ -98,8 +98,7 @@
 }
 
 .easyclear{
-    //should be applied to :after psuedo-element
-    visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;
+    &:after{ visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
 }
 
 .flexbox(@orient: horizontal, @pack: start, @align: stretch, @direction: normal){
