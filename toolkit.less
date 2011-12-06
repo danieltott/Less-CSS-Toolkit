@@ -134,7 +134,7 @@
     box-direction: @direction;
 }
 
-.gradient(@startcolor, @stopcolor, @startpoint: "left top", @endpoint: "left bottom"){
+.gradient(@startcolor, @stopcolor, @startpoint: center top, @endpoint: center bottom){
     background: -webkit-gradient(linear, @startpoint, @endpoint, color-stop(0, @startcolor), color-stop(0.5, @stopcolor));
     background: -webkit-linear-gradient(@startpoint , @startcolor, @stopcolor);
     background: -o-linear-gradient(@startpoint , @startcolor, @stopcolor);
