@@ -8,15 +8,15 @@
 */
 
 @mixin animation ($name, $duration, $iteration-count, $timing) {
-  -moz-animation-name: $name;
-  -moz-animation-duration: $duration;
-  -moz-animation-iteration-count: $iteration-count;
-  -moz-animation-timing-function: $timing;
-
   -webkit-animation-name: $name;
   -webkit-animation-duration: $duration;
   -webkit-animation-iteration-count: $iteration-count;
   -webkit-animation-timing-function: $timing;
+
+  -moz-animation-name: $name;
+  -moz-animation-duration: $duration;
+  -moz-animation-iteration-count: $iteration-count;
+  -moz-animation-timing-function: $timing;
 
   -ms-animation-name: $name;
   -ms-animation-duration: $duration;
@@ -35,44 +35,44 @@
 }
 
 @mixin background-clip ($clip) {
-  -moz-background-clip: $clip;
   -webkit-background-clip: $clip;
+  -moz-background-clip: $clip;
   background-clip: $clip;
 }
 
 @mixin background-origin ($origin) {
+  -webkit-origin-size: $origin;
   -moz-origin-size: $origin;
   -o-origin-size: $origin;
-  -webkit-origin-size: $origin;
   origin-size: $origin;
 }
 
 @mixin background-size ($size) {
+  -webkit-background-size: $size;
   -moz-background-size: $size;
   -o-background-size: $size;
-  -webkit-background-size: $size;
   background-size: $size;
 }
 
 @mixin border-image ($img, $number, $repeat) {
   $val: $img, $number, $repeat;
-  -moz-border-image: $val;
   -webkit-border-image: $val;
+  -moz-border-image: $val;
   -ms-border-image: $val;
   -o-border-image: $val;
   border-image: $val;
 }
 
 @mixin border-radius ($radius) {
-  -moz-border-radius: $radius;
   -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
   -o-border-radius: $radius;
   border-radius: $radius;
 }
 
 @mixin box-flex ($flex) {
-  -moz-box-flex: $flex;
   -webkit-box-flex: $flex;
+  -moz-box-flex: $flex;
   -ms-flex: $flex;
   -o-flex: $flex;
   box-flex: $flex;
@@ -85,19 +85,19 @@
 }
 
 @mixin box-sizing ($sizing) {
-  -moz-box-sizing: $sizing;
   -webkit-box-sizing: $sizing;
+  -moz-box-sizing: $sizing;
   box-sizing: $sizing;
 }
 
 @mixin columns ($columnValue, $gap, $rule) {
-  -moz-columns: $columnValue;
-  -moz-column-gap: $gap;
-  -moz-column-rule: $rule;
-
   -webkit-columns: $columnValue;
   -webkit-column-gap: $gap;
   -webkit-column-rule: $rule;
+
+  -moz-columns: $columnValue;
+  -moz-column-gap: $gap;
+  -moz-column-rule: $rule;
 
   columns: $columnValue;
   column-gap: $gap;
@@ -145,15 +145,15 @@
 }
 
 @mixin transform ($transform) {
-  -moz-transform: $transform;
   -webkit-transform: $transform;
+  -moz-transform: $transform;
   -ms-transform: $transform;
   transform: $transform;
 }
 
 @mixin transform-origin ($origin) {
-  -moz-transform-origin: $origin;
   -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
   -ms-transform-origin: $origin;
   transform-origin: $origin;
 }
@@ -161,8 +161,8 @@
 @mixin transition ($transition) {
   -webkit-transition: $transition;
   -moz-transition: $transition;
-  -o-transition: $transition;
   -ms-transition: $transition;
+  -o-transition: $transition;
   transition: $transition;
 }
 
