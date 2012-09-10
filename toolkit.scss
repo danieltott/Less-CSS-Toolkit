@@ -36,58 +36,58 @@
 
 @mixin background-clip ($clip) {
   -webkit-background-clip: $clip;
-  -moz-background-clip: $clip;
-  background-clip: $clip;
+     -moz-background-clip: $clip;
+          background-clip: $clip;
 }
 
 @mixin background-origin ($origin) {
   -webkit-origin-size: $origin;
-  -moz-origin-size: $origin;
-  -o-origin-size: $origin;
-  origin-size: $origin;
+     -moz-origin-size: $origin;
+       -o-origin-size: $origin;
+          origin-size: $origin;
 }
 
 @mixin background-size ($size) {
   -webkit-background-size: $size;
-  -moz-background-size: $size;
-  -o-background-size: $size;
-  background-size: $size;
+     -moz-background-size: $size;
+       -o-background-size: $size;
+          background-size: $size;
 }
 
 @mixin border-image ($img, $number, $repeat) {
   $val: $img, $number, $repeat;
   -webkit-border-image: $val;
-  -moz-border-image: $val;
-  -ms-border-image: $val;
-  -o-border-image: $val;
-  border-image: $val;
+     -moz-border-image: $val;
+      -ms-border-image: $val;
+       -o-border-image: $val;
+          border-image: $val;
 }
 
 @mixin border-radius ($radius) {
   -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -o-border-radius: $radius;
-  border-radius: $radius;
+     -moz-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
 }
 
 @mixin box-flex ($flex) {
   -webkit-box-flex: $flex;
-  -moz-box-flex: $flex;
-  -ms-flex: $flex;
-  -o-flex: $flex;
-  box-flex: $flex;
+     -moz-box-flex: $flex;
+      -ms-box-flex: $flex;
+       -o-box-flex: $flex;
+          box-flex: $flex;
 }
 
 @mixin box-shadow ($shadow) {
   -webkit-box-shadow: $shadow;
-  -moz-box-shadow: $shadow;
-  box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
 }
 
 @mixin box-sizing ($sizing) {
   -webkit-box-sizing: $sizing;
-  -moz-box-sizing: $sizing;
-  box-sizing: $sizing;
+     -moz-box-sizing: $sizing;
+          box-sizing: $sizing;
 }
 
 @mixin columns ($columnValue, $gap, $rule) {
@@ -146,24 +146,24 @@
 
 @mixin transform ($transform) {
   -webkit-transform: $transform;
-  -moz-transform: $transform;
-  -ms-transform: $transform;
-  transform: $transform;
+     -moz-transform: $transform;
+      -ms-transform: $transform;
+          transform: $transform;
 }
 
 @mixin transform-origin ($origin) {
   -webkit-transform-origin: $origin;
-  -moz-transform-origin: $origin;
-  -ms-transform-origin: $origin;
-  transform-origin: $origin;
+     -moz-transform-origin: $origin;
+      -ms-transform-origin: $origin;
+          transform-origin: $origin;
 }
 
 @mixin transition ($transition) {
   -webkit-transition: $transition;
-  -moz-transition: $transition;
-  -ms-transition: $transition;
-  -o-transition: $transition;
-  transition: $transition;
+     -moz-transition: $transition;
+      -ms-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
 }
 
 @mixin easyclear() {
