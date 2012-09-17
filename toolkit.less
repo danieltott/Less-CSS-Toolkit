@@ -149,6 +149,18 @@
     background: linear-gradient(@startpoint , @startcolor, @stopcolor);
 }
 
+.size(@width,@height){
+    width: @width;
+    height: @height; 
+}
+
+.replacement(@width, @height, @imgSrc){
+    .size(@width, @height);
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url(@imgSrc) 0 0 no-repeat;
+}
+
 .transform(@transform){
     -moz-transform: @transform;
     -webkit-transform: @transform;

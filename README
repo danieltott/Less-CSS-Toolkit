@@ -36,6 +36,10 @@ Mixins:
 .gradient(@startcolor, @stopcolor, @startpoint: center top, @endpoint: center bottom)
 (simple, two-color gradient. defaults to top-to-bottom)
 
+.size(@width,@height)
+
+.replacement(@width, @height, @imgSrc)
+
 .transform(@transform)
 
 .transform-origin(@origin)
