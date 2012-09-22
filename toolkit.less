@@ -8,54 +8,46 @@
 
 */
 
-.animation(@name, @duration, @iteration-count, @timing){
-    -moz-animation-name: @name;
-	-moz-animation-duration: @duration;
-	-moz-animation-iteration-count: @iteration-count;
-	-moz-animation-timing-function: @timing;
-	
-	-webkit-animation-name: @name;
-	-webkit-animation-duration: @duration;
-	-webkit-animation-iteration-count: @iteration-count;
-	-webkit-animation-timing-function: @timing;
-	
-	-ms-animation-name: @name;
-	-ms-animation-duration: @duration;
-	-ms-animation-iteration-count: @iteration-count;
-	-ms-animation-timing-function: @timing;
-	
-	-o-animation-name: @name;
-	-o-animation-duration: @duration;
-	-o-animation-iteration-count: @iteration-count;
-	-o-animation-timing-function: @timing;
-	
-	animation-name: @name;
-	animation-duration: @duration;
-	animation-iteration-count: @iteration-count;
-	animation-timing-function: @timing;
+/* http://www.w3.org/TR/css3-animations */
+
+.animation(@name, @duration, @timing, @delay, @iteration-count, @direction) {
+    @vals: @name, @duration, @timing, @delay, @iteration-count, @direction;
+    -moz-animation: @vals;
+    -webkit-animation: @vals;
+    -ms-animation: @vals;
+    -o-animation: @vals;
+    animation: @vals;
 }
 
-.background-clip(@clip){
+/* http://www.w3.org/TR/css3-background/#the-background-clip */
+
+.background-clip(@clip) {
     -moz-background-clip: @clip;
     -webkit-background-clip: @clip;
     background-clip: @clip;
 }
 
-.background-origin(@origin){
+/* http://www.w3.org/TR/css3-background/#the-background-origin */
+
+.background-origin(@origin) {
     -moz-origin-size: @origin;
-     -o-origin-size: @origin;
      -webkit-origin-size: @origin;
+     -o-origin-size: @origin;
      origin-size: @origin;
 }
 
-.background-size(@size){
+/* http://www.w3.org/TR/css3-background/#the-background-size */
+
+.background-size(@size) {
     -moz-background-size: @size;
-     -o-background-size: @size;
      -webkit-background-size: @size;
+     -o-background-size: @size;
      background-size: @size;
 }
 
-.border-image(@img, @number, @repeat: stretch){
+/* http://www.w3.org/TR/css3-background/#border-images */
+
+.border-image(@img, @number, @repeat: stretch) {
     @val: @img, @number, @repeat;
     -moz-border-image: @val;
     -webkit-border-image: @val;
@@ -64,6 +56,8 @@
     border-image: @val;
 }
 
+/* http://www.w3.org/TR/css3-background/#the-border-radius */
+
 .border-radius(@radius) {
     -moz-border-radius: @radius;
     -webkit-border-radius: @radius;
@@ -71,26 +65,21 @@
     border-radius: @radius;
 }
 
-.box-flex(@flex: 1){
-    -moz-box-flex: @flex;
-    -webkit-box-flex: @flex;
-    -ms-flex: @flex;
-    -o-flex: @flex;
-    box-flex: @flex;
-}
-.box-shadow(@shadow){
+/* http://www.w3.org/TR/css3-background/#box-shadow */
+
+.box-shadow(@shadow) {
     -webkit-box-shadow: @shadow;
     -moz-box-shadow: @shadow;
     box-shadow: @shadow;
 }
 
-.box-sizing(@sizing){
+.box-sizing(@sizing) {
     -moz-box-sizing: @sizing;
     -webkit-box-sizing: @sizing;
     box-sizing: @sizing;
 }
 
-.columns(@columnValue, @gap: normal, @rule: none){
+.columns(@columnValue, @gap: normal, @rule: none) {
     
     -moz-columns: @columnValue;
     -moz-column-gap:@gap;
@@ -106,8 +95,35 @@
 }
 
 .easyclear(){
-    &:after{ visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+    &:after{ 
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " "; 
+        clear: both; 
+        height: 0;
+    }
+
 }
+
+.micro-clearfix{
+    zoom:1;
+
+    &:before, 
+    &:after { 
+        content: ""; 
+        display: table;
+    }
+
+    &:after{ 
+        clear: both; 
+    }
+
+}
+
+/* Need to revisit Flexible Box Layout for new syntax
+http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/#box-model */
 
 .flexbox(@orient: horizontal, @pack: start, @align: stretch, @direction: normal){
     display: -webkit-box;
@@ -139,6 +155,14 @@
     box-pack: @pack;
     box-align: @align;
     box-direction: @direction;
+}
+
+.box-flex(@flex: 1) {
+    -moz-box-flex: @flex;
+    -webkit-box-flex: @flex;
+    -ms-flex: @flex;
+    -o-flex: @flex;
+    box-flex: @flex;
 }
 
 .gradient(@startcolor, @stopcolor, @startpoint: center top, @endpoint: center bottom){
