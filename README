@@ -1,13 +1,13 @@
 
-    LESS CSS Toolkit
-    
-    A collection of re-usable LESS CSS Mixins
-    
-    Daniel T. Ott
-    http://dtott.com
+LESS CSS Toolkit
+===
+
+A collection of re-usable LESS CSS Mixins
+
+Daniel T. Ott
+http://dtott.com
 
 
-------------
 Mixins:
 ------------
 
