@@ -207,7 +207,7 @@
 // http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
 
 .image-replacement(@width, @height, @img) {
-    background: @img 0 0 no-repeat;
+    background: url(@img) 0 0 no-repeat;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
