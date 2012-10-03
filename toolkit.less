@@ -1,25 +1,25 @@
 /*
     LESS CSS Toolkit
-    
+
     A collection of re-usable LESS CSS Mixins
-    
+
     Daniel T. Ott
     http://dtott.com
 
 */
 
-/* http://www.w3.org/TR/css3-animations */
+// http://www.w3.org/TR/css3-animations
 
-.animation(@name, @duration, @timing, @delay, @iteration-count, @direction) {
-    @vals: @name, @duration, @timing, @delay, @iteration-count, @direction;
-    -moz-animation: @vals;
-    -webkit-animation: @vals;
-    -ms-animation: @vals;
-    -o-animation: @vals;
-    animation: @vals;
+.animation(@name, @duration, @timing, @delay: 0, @iterations, @direction: normal) {
+    @vars: @name @duration @timing @delay @iterations @direction;
+    -moz-animation: @vars;
+    -webkit-animation: @vars;
+    -ms-animation: @vars;
+    -o-animation: @vars;
+    animation: @vars;
 }
 
-/* http://www.w3.org/TR/css3-background/#the-background-clip */
+// http://www.w3.org/TR/css3-background/#the-background-clip
 
 .background-clip(@clip) {
     -moz-background-clip: @clip;
@@ -27,7 +27,7 @@
     background-clip: @clip;
 }
 
-/* http://www.w3.org/TR/css3-background/#the-background-origin */
+// http://www.w3.org/TR/css3-background/#the-background-origin
 
 .background-origin(@origin) {
     -moz-origin-size: @origin;
@@ -36,7 +36,7 @@
      origin-size: @origin;
 }
 
-/* http://www.w3.org/TR/css3-background/#the-background-size */
+// http://www.w3.org/TR/css3-background/#the-background-size
 
 .background-size(@size) {
     -moz-background-size: @size;
@@ -45,7 +45,7 @@
      background-size: @size;
 }
 
-/* http://www.w3.org/TR/css3-background/#border-images */
+// http://www.w3.org/TR/css3-background/#border-images
 
 .border-image(@img, @number, @repeat: stretch) {
     @val: @img, @number, @repeat;
@@ -56,7 +56,9 @@
     border-image: @val;
 }
 
-/* http://www.w3.org/TR/css3-background/#the-border-radius */
+// http://www.w3.org/TR/css3-background/#the-border-radius
+// Example of complex border-radius for interesting shapes:
+// https://www.dropbox.com/s/6qd49bganv8bjas/funky-border-radius.png
 
 .border-radius(@radius) {
     -moz-border-radius: @radius;
@@ -65,7 +67,9 @@
     border-radius: @radius;
 }
 
-/* http://www.w3.org/TR/css3-background/#box-shadow */
+// http://www.w3.org/TR/css3-background/#box-shadow
+// Example for multiple shadows:
+// https://www.dropbox.com/s/mjo3x82ssikl62a/multiple-box-shadows.png
 
 .box-shadow(@shadow) {
     -webkit-box-shadow: @shadow;
@@ -80,15 +84,15 @@
 }
 
 .columns(@columnValue, @gap: normal, @rule: none) {
-    
+
     -moz-columns: @columnValue;
     -moz-column-gap:@gap;
     -moz-column-rule: @rule;
-    
+
     -webkit-columns: @columnValue;
     -webkit-column-gap:@gap;
     -webkit-column-rule: @rule;
-    
+
     columns: @columnValue;
     column-gap:@gap;
     column-rule: @rule;
@@ -96,34 +100,37 @@
 
 .easyclear(){
 
-    &:after{ 
+    &:after{
         visibility: hidden;
         display: block;
         font-size: 0;
-        content: " "; 
-        clear: both; 
+        content: " ";
+        clear: both;
         height: 0;
     }
 
 }
 
-.micro-clearfix{
-    zoom:1;
+// alternative float clearing method (2011 flavor)
+// http://nicolasgallagher.com/micro-clearfix-hack/
 
-    &:before, 
-    &:after { 
-        content: ""; 
+.micro-clearfix(){
+    *zoom: 1; // for oldIE
+
+    &:before,
+    &:after {
+        content: "";
         display: table;
     }
 
-    &:after{ 
-        clear: both; 
+    &:after{
+        clear: both;
     }
 
 }
 
-/* Need to revisit Flexible Box Layout for new syntax
-http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/#box-model */
+// Need to revisit Flexible Box Layout for new syntax
+// http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/#box-model
 
 .flexbox(@orient: horizontal, @pack: start, @align: stretch, @direction: normal){
     display: -webkit-box;
@@ -131,7 +138,7 @@ http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/#box-model */
     -webkit-box-pack: @pack;
     -webkit-box-align: @align;
     -webkit-box-direction: @direction;
-    
+
     display: -moz-box;
     -moz-box-orient: @orient;
     -moz-box-pack: @pack;
@@ -143,13 +150,13 @@ http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/#box-model */
     -ms-box-pack: @pack;
     -ms-box-align: @align;
     -ms-box-direction: @direction;
-    
+
     display: -o-box;
     -o-box-orient: @orient;
     -o-box-pack: @pack;
     -o-box-align: @align;
     -o-box-direction: @direction;
-    
+
     display: box;
     box-orient: @orient;
     box-pack: @pack;
@@ -166,16 +173,27 @@ http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/#box-model */
 }
 
 .gradient(@startcolor, @stopcolor, @startpoint: center top, @endpoint: center bottom){
-    background: -webkit-gradient(linear, @startpoint, @endpoint, color-stop(0, @startcolor), color-stop(0.5, @stopcolor));
-    background: -webkit-linear-gradient(@startpoint , @startcolor, @stopcolor);
-    background: -o-linear-gradient(@startpoint , @startcolor, @stopcolor);
-    background: -moz-linear-gradient(@startpoint , @startcolor, @stopcolor);
-    background: linear-gradient(@startpoint , @startcolor, @stopcolor);
+    background-image: -webkit-gradient(linear, @startpoint, @endpoint, color-stop(0, @startcolor), color-stop(1, @stopcolor));
+    background-image: -webkit-linear-gradient(top, @startcolor 0%, @stopcolor 100%);
+    background-image: -o-linear-gradient(top, @startcolor 0%, @stopcolor 100%);
+    background-image: -moz-linear-gradient(top, @startcolor 0%, @stopcolor 100%);
+    background-image: linear-gradient(top, @startcolor 0%, @stopcolor 100%);
+}
+
+// Common button gradient style. Only need to add colors. stop-points are provided.
+
+.button-gradient(@startcolor, @midcolor1, @midcolor2, @stopcolor, @startpoint: center top, @endpoint: center bottom) {
+    background: -webkit-gradient(linear, @startpoint, @endpoint, color-stop(0%, @startcolor), color-stop(50%, @midcolor1), color-stop(51%, @midcolor2), color-stop(100%, @stopcolor)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(@startpoint, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(@startpoint, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%); /* Opera 11.10+ */
+    background: -moz-linear-gradient(@startpoint, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%); /* FF3.6+ */
+    background: -ms-linear-gradient(@startpoint, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%); /* IE10+ */
+    background: linear-gradient(@startpoint, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%); /* W3C */
 }
 
 .size(@width,@height){
     width: @width;
-    height: @height; 
+    height: @height;
 }
 
 .replacement(@width, @height, @imgSrc){
@@ -183,6 +201,17 @@ http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/#box-model */
     text-indent: -9999px;
     overflow: hidden;
     background: url(@imgSrc) 0 0 no-repeat;
+}
+
+// Alternate Image Replacement (2012 flavor)
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+
+.image-replacement(@width, @height, @img) {
+    background: @img 0 0 no-repeat;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    .size(@width, @height);
 }
 
 .transform(@transform){
@@ -205,4 +234,16 @@ http://www.w3.org/TR/2012/CR-css3-flexbox-20120918/#box-model */
     -o-transition: @transition;
     -ms-transition: @transition;
     transition: @transition;
+}
+
+// Instant Modal Overlay concepts (2012 flavor)
+// https://twitter.com/LeaVerou/statuses/251469590377418753
+
+.modal-overlay(@color: rgba(0, 0 ,0 , 0.3)) {
+    outline-style: solid;
+    outline-width: 9999px;
+    outline-color: @color;
+}
+.shadow-modal-overlay(@other-shadows, @overlay: 0 0 0 9999px rgba(0, 0, 0, 0.3)) {
+    .box-shadow(@other-shadows, @overlay);
 }
