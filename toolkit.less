@@ -173,11 +173,11 @@
 }
 
 .gradient(@startcolor, @stopcolor, @startpoint: center top, @endpoint: center bottom){
-    background-image: -webkit-gradient(linear, @startpoint, @endpoint, color-stop(0, @startcolor), color-stop(1, @stopcolor));
-    background-image: -webkit-linear-gradient(top, @startcolor 0%, @stopcolor 100%);
-    background-image: -o-linear-gradient(top, @startcolor 0%, @stopcolor 100%);
-    background-image: -moz-linear-gradient(top, @startcolor 0%, @stopcolor 100%);
-    background-image: linear-gradient(top, @startcolor 0%, @stopcolor 100%);
+    background: -webkit-gradient(linear, @startpoint, @endpoint, color-stop(0, @startcolor), color-stop(1, @stopcolor));
+    background: -webkit-linear-gradient(top, @startcolor 0%, @stopcolor 100%);
+    background: -o-linear-gradient(top, @startcolor 0%, @stopcolor 100%);
+    background: -moz-linear-gradient(top, @startcolor 0%, @stopcolor 100%);
+    background: linear-gradient(top, @startcolor 0%, @stopcolor 100%);
 }
 
 // Common button gradient style. Only need to add colors. stop-points are provided.
@@ -244,6 +244,13 @@
     outline-width: 9999px;
     outline-color: @color;
 }
+
 .shadow-modal-overlay(@other-shadows, @overlay: 0 0 0 9999px rgba(0, 0, 0, 0.3)) {
     .box-shadow(@other-shadows, @overlay);
+}
+
+.inline-block() {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
 }
