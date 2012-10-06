@@ -7,11 +7,14 @@ A collection of re-usable LESS CSS Mixins
 Daniel T. Ott
 http://dtott.com
 
+Bridget Stewart
+http://sharksandcupcakes.com
+
 
 Mixins:
 ------------
 
-.animation(@name, @duration, @iteration-count, @timing)
+.animation(@name, @duration, @timing, @delay: 0, @iterations, @direction: normal)
 
 .background-clip(@clip)
 
@@ -29,16 +32,21 @@ Mixins:
 
 .columns(@columnValue, @gap, @rule: none)
 
-.easyclear
+.easyclear() -- _updated to micro-clearfix, named .clearfix (below)_
 
-.flexbox(@orient: horizontal, @pack: start, @align: stretch, @direction: normal)
+.clearfix()
 
-.gradient(@startcolor, @stopcolor, @startpoint: center top, @endpoint: center bottom)
-(simple, two-color gradient. defaults to top-to-bottom)
+.flexbox(@orient: horizontal, @pack: start, @align: stretch, @direction: normal) -- _will be revisiting this to update to latest syntax_
+
+.gradient(@startcolor, @stopcolor, @startpoint: center top, @endpoint: center bottom) -- _simple, two-color gradient. defaults to top-to-bottom_
+
+.button-gradient(@startcolor, @midcolor1, @midcolor2, @stopcolor, @startpoint: center top, @endpoint: center bottom) -- _Common button gradient style: visual example of output: http://codepen.io/bridgestew/details/lfydn#pen-details-tab _
 
 .size(@width,@height)
 
-.replacement(@width, @height, @imgSrc)
+.replacement(@width, @height, @img) -- _updated to .image-replacement (below)_
+
+.image-replacement(@width, @height, @img)
 
 .transform(@transform)
 

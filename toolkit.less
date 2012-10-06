@@ -6,6 +6,9 @@
     Daniel T. Ott
     http://dtott.com
 
+    Bridget Stewart
+    http://sharksandcupcakes.com
+
 */
 
 // http://www.w3.org/TR/css3-animations
@@ -98,35 +101,21 @@
     column-rule: @rule;
 }
 
-.easyclear(){
-
-    &:after{
-        visibility: hidden;
-        display: block;
-        font-size: 0;
-        content: " ";
-        clear: both;
-        height: 0;
-    }
-
-}
-
-// alternative float clearing method (2011 flavor)
+.easyclear() {
 // http://nicolasgallagher.com/micro-clearfix-hack/
+    .clearfix() {
+        *zoom: 1; // for oldIE
 
-.micro-clearfix(){
-    *zoom: 1; // for oldIE
+        &:before,
+        &:after {
+            content: "";
+            display: table;
+        }
 
-    &:before,
-    &:after {
-        content: "";
-        display: table;
+        &:after{
+            clear: both;
+        }
     }
-
-    &:after{
-        clear: both;
-    }
-
 }
 
 // Need to revisit Flexible Box Layout for new syntax
@@ -172,15 +161,16 @@
     box-flex: @flex;
 }
 
+//returned to its original *cough* glory ;)
 .gradient(@startcolor, @stopcolor, @startpoint: center top, @endpoint: center bottom){
-    background: -webkit-gradient(linear, @startpoint, @endpoint, color-stop(0, @startcolor), color-stop(1, @stopcolor));
-    background: -webkit-linear-gradient(top, @startcolor 0%, @stopcolor 100%);
-    background: -o-linear-gradient(top, @startcolor 0%, @stopcolor 100%);
-    background: -moz-linear-gradient(top, @startcolor 0%, @stopcolor 100%);
-    background: linear-gradient(top, @startcolor 0%, @stopcolor 100%);
+    background: -webkit-gradient(linear, @startpoint, @endpoint, color-stop(0, @startcolor), color-stop(0.5, @stopcolor));
+    background: -webkit-linear-gradient(@startpoint , @startcolor, @stopcolor);
+    background: -o-linear-gradient(@startpoint , @startcolor, @stopcolor);
+    background: -moz-linear-gradient(@startpoint , @startcolor, @stopcolor);
+    background: linear-gradient(@startpoint , @startcolor, @stopcolor);
 }
 
-// Common button gradient style. Only need to add colors. stop-points are provided.
+// Common button gradient style: visual example of output: http://codepen.io/bridgestew/details/lfydn#pen-details-tab
 
 .button-gradient(@startcolor, @midcolor1, @midcolor2, @stopcolor, @startpoint: center top, @endpoint: center bottom) {
     background: -webkit-gradient(linear, @startpoint, @endpoint, color-stop(0%, @startcolor), color-stop(50%, @midcolor1), color-stop(51%, @midcolor2), color-stop(100%, @stopcolor)); /* Chrome,Safari4+ */
@@ -196,22 +186,16 @@
     height: @height;
 }
 
-.replacement(@width, @height, @imgSrc){
-    .size(@width, @height);
-    text-indent: -9999px;
-    overflow: hidden;
-    background: url(@imgSrc) 0 0 no-repeat;
-}
-
+.replacement(@width, @height, @img){
 // Alternate Image Replacement (2012 flavor)
 // http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
-
-.image-replacement(@width, @height, @img) {
-    background: url(@img) 0 0 no-repeat;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    .size(@width, @height);
+    .image-replacement(@width, @height, @img) {
+        background: url(@img) 0 0 no-repeat;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        .size(@width, @height);
+    }
 }
 
 .transform(@transform){
@@ -234,23 +218,4 @@
     -o-transition: @transition;
     -ms-transition: @transition;
     transition: @transition;
-}
-
-// Instant Modal Overlay concepts (2012 flavor)
-// https://twitter.com/LeaVerou/statuses/251469590377418753
-
-.modal-overlay(@color: rgba(0, 0 ,0 , 0.3)) {
-    outline-style: solid;
-    outline-width: 9999px;
-    outline-color: @color;
-}
-
-.shadow-modal-overlay(@other-shadows, @overlay: 0 0 0 9999px rgba(0, 0, 0, 0.3)) {
-    .box-shadow(@other-shadows, @overlay);
-}
-
-.inline-block() {
-    display: inline-block;
-    *zoom: 1;
-    *display: inline;
 }
