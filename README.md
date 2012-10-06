@@ -40,7 +40,7 @@ Mixins:
 
 .gradient(@startcolor, @stopcolor, @startpoint: center top, @endpoint: center bottom) -- _simple, two-color gradient. defaults to top-to-bottom_
 
-.button-gradient(@startcolor, @midcolor1, @midcolor2, @stopcolor, @startpoint: center top, @endpoint: center bottom) -- _Common button gradient style: visual example of output: http://codepen.io/bridgestew/details/lfydn#pen-details-tab _
+.button-gradient(@startcolor, @midcolor1, @midcolor2, @stopcolor, @startpoint: center top, @endpoint: center bottom) -- _Common button gradient style: visual example of output: http://codepen.io/bridgestew/details/lfydn#pen-details-tab_
 
 .size(@width,@height)
 
