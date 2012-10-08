@@ -33,8 +33,27 @@ Mixins:
 
 .flexbox(@orient: horizontal, @pack: start, @align: stretch, @direction: normal)
 
-.gradient(@startcolor, @stopcolor, @startpoint: center top, @endpoint: center bottom)
-(simple, two-color gradient. defaults to top-to-bottom)
+.linear-gradient()
+simple, two-color gradient. there are a few ways to use it
+```css
+.linear-gradient(#0F0, #F00);
+//top to bottom gradient
+
+.linear-gradient(#0F0, #F00, top);
+//top to bottom gradient (exactly the same as the first example)
+
+.linear-gradient(#0F0, #F00, bottom);
+//bottom to top gradient
+
+.linear-gradient(#0F0, #F00, left);
+//left to right gradient
+
+.linear-gradient(#0F0, #F00, right);
+//right to left gradient
+
+.linear-gradient(#0F0, #F00, 45deg);
+//gradient with an angle (does not support old webkit syntax (used in iOS4))
+```
 
 .size(@width,@height)
 
