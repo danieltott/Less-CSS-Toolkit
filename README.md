@@ -7,11 +7,14 @@ A collection of re-usable LESS CSS Mixins
 Daniel T. Ott
 http://dtott.com
 
+Bridget Stewart
+http://sharksandcupcakes.com
+
 
 Mixins:
 ------------
 
-.animation(@name, @duration, @iteration-count, @timing)
+.animation(@name, @duration, @timing, @delay: 0, @iterations: infinite, @direction: normal)
 
 .background-clip(@clip)
 
@@ -21,17 +24,13 @@ Mixins:
 
 .border-radius(@radius)
 
-.box-flex(@flex: 1)
-
 .box-shadow(@shadow)
 
 .box-sizing(@sizing)
 
 .columns(@columnValue, @gap, @rule: none)
 
-.easyclear
-
-.flexbox(@orient: horizontal, @pack: start, @align: stretch, @direction: normal)
+.clearfix()
 
 .linear-gradient()
 simple, two-color gradient. there are a few ways to use it
@@ -55,9 +54,12 @@ simple, two-color gradient. there are a few ways to use it
 //gradient with an angle (does not support old webkit syntax (used in iOS4))
 ```
 
+.button-gradient(@startcolor, @midcolor1, @midcolor2, @stopcolor) 
+Common button gradient style: visual example of output: http://codepen.io/bridgestew/details/lfydn#pen-details-tab
+
 .size(@width,@height)
 
-.replacement(@width, @height, @imgSrc)
+.image-replacement(@width, @height, @img)
 
 .transform(@transform)
 
