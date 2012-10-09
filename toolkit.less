@@ -117,7 +117,7 @@
 }
 
 .linear-gradient(@startcolor, @stopcolor, @angle) when (isnumber(@angle)) {
-    background-color: mix(@startColor, @endColor, 60%);
+    background-color: mix(@startcolor, @stopcolor, 60%);
     background-image: -webkit-linear-gradient(@angle , @startcolor, @stopcolor);
     background-image: -o-linear-gradient(@angle , @startcolor, @stopcolor);
     background-image: -moz-linear-gradient(@angle , @startcolor, @stopcolor);
