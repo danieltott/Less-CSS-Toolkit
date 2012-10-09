@@ -126,24 +126,24 @@
 
 .linear-gradient(@startcolor, @stopcolor) {
     background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, @startcolor), color-stop(0.5, @stopcolor));//for old webkit syntax
-    .gradient(@startcolor, @stopcolor, -90deg);
+    .linear-gradient(@startcolor, @stopcolor, -90deg);
 }
 
 .linear-gradient(@startcolor, @stopcolor, top) {
-    .gradient(@startcolor, @stopcolor,);
+    .linear-gradient(@startcolor, @stopcolor,);
 }
 
 .linear-gradient(@startcolor, @stopcolor, bottom) {
-    .gradient(@stopcolor, @startcolor);
+    .linear-gradient(@stopcolor, @startcolor);
 }
 
 .linear-gradient(@startcolor, @stopcolor, left) {
     background-image: -webkit-gradient(linear, left top, right top, color-stop(0, @startcolor), color-stop(0.5, @stopcolor));//for old webkit syntax
-    .gradient(@startcolor, @stopcolor, 0deg);
+    .linear-gradient(@startcolor, @stopcolor, 0deg);
 }
 
 .linear-gradient(@startcolor, @stopcolor, right) {
-    .gradient(@stopcolor, @startcolor, left);
+    .linear-gradient(@stopcolor, @startcolor, left);
 }
 
 
