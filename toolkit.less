@@ -51,7 +51,7 @@
 // http://www.w3.org/TR/css3-background/#border-images
 
 .border-image(@img, @number, @repeat: stretch) {
-    @val: @img, @number, @repeat;
+    @val: @img @number @repeat;
     -moz-border-image: @val;
     -webkit-border-image: @val;
     -ms-border-image: @val;
@@ -149,12 +149,12 @@
 
 // Common button gradient style: visual example of output: http://codepen.io/bridgestew/details/lfydn#pen-details-tab
 .button-gradient(@startcolor, @midcolor1, @midcolor2, @stopcolor) {
-    background: -webkit-gradient(linear, center top, color-stop(0%, @startcolor), color-stop(50%, @midcolor1), color-stop(51%, @midcolor2), color-stop(100%, @stopcolor)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%); /* Opera 11.10+ */
-    background: -moz-linear-gradient(top, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%); /* FF3.6+ */
-    background: -ms-linear-gradient(top, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%); /* IE10+ */
-    background: linear-gradient(to bottom, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%); /* W3C */
+    background: -webkit-gradient(linear, center top, color-stop(0%, @startcolor), color-stop(50%, @midcolor1), color-stop(51%, @midcolor2), color-stop(100%, @stopcolor));
+    background: -webkit-linear-gradient(top, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%);
+    background: -o-linear-gradient(top, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%);
+    background: -moz-linear-gradient(top, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%);
+    background: -ms-linear-gradient(top, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%);
+    background: linear-gradient(to bottom, @startcolor 0%, @midcolor1 50%, @midcolor2 51%, @stopcolor 100%);
 }
 
 .size(@width,@height) {
@@ -162,7 +162,7 @@
     height: @height;
 }
 
-// Alternate Image Replacement (2012 flavor)
+// Image Replacement (2012 flavor)
 // http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
 .image-replacement(@width, @height, @img) {
     background: url(@img) 0 0 no-repeat;
