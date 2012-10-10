@@ -117,15 +117,20 @@
 }
 
 .linear-gradient(@startcolor, @stopcolor, @angle) when (isnumber(@angle)) {
-    background-color: mix(@startcolor, @stopcolor, 60%);
+    .linear-gradient(@startcolor, @stopcolor, @angle, mix(@startcolor, @stopcolor, 60%));
+}
+
+.linear-gradient(@startcolor, @stopcolor, @angle, @backgroundcolor) when (isnumber(@angle)) {
+    background-color: @backgroundcolor;
     background-image: -webkit-linear-gradient(450 - @angle, @startcolor, @stopcolor);
     background-image: -o-linear-gradient(450 - @angle, @startcolor, @stopcolor);
     background-image: -moz-linear-gradient(450 - @angle, @startcolor, @stopcolor);
     background-image: linear-gradient(@angle, @startcolor, @stopcolor);
 }
 
+
 .linear-gradient(@startcolor, @stopcolor) {
-    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, @startcolor), color-stop(0.5, @stopcolor));//for old webkit syntax
+    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, @startcolor), color-stop(1, @stopcolor));//for old webkit syntax
     .linear-gradient(@startcolor, @stopcolor, 180deg);
 }
 
@@ -133,17 +138,43 @@
     .linear-gradient(@startcolor, @stopcolor);
 }
 
-.linear-gradient(@startcolor, @stopcolor, bottom) {
-    .linear-gradient(@stopcolor, @startcolor);
+.linear-gradient(@startcolor, @stopcolor, top, @backgroundcolor) {
+    .linear-gradient(@startcolor, @stopcolor, @backgroundcolor);
 }
 
 .linear-gradient(@startcolor, @stopcolor, left) {
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, @startcolor), color-stop(0.5, @stopcolor));//for old webkit syntax
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, @startcolor), color-stop(1, @stopcolor));//for old webkit syntax
     .linear-gradient(@startcolor, @stopcolor, 90deg);
 }
 
-.linear-gradient(@startcolor, @stopcolor, right) {
-    .linear-gradient(@stopcolor, @startcolor, left);
+.linear-gradient(@startcolor, @stopcolor, left, @backgroundcolor) {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, @startcolor), color-stop(1, @stopcolor));//for old webkit syntax
+    .linear-gradient(@startcolor, @stopcolor, 90deg, @backgroundcolor);
+}
+
+.linear-gradient(@startcolor, @stopcolor, top-diagonal) {
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, @startcolor), color-stop(1, @stopcolor));//for old webkit syntax
+    .linear-gradient(@startcolor, @stopcolor, 135deg);
+}
+
+.linear-gradient(@startcolor, @stopcolor, top-diagonal, @backgroundcolor) {
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, @startcolor), color-stop(1, @stopcolor));//for old webkit syntax
+    .linear-gradient(@startcolor, @stopcolor, 135deg, @backgroundcolor);
+}
+
+.linear-gradient(@startcolor, @stopcolor, bottom-diagonal) {
+    background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, @startcolor), color-stop(1, @stopcolor));//for old webkit syntax
+    .linear-gradient(@startcolor, @stopcolor, 45deg);
+}
+
+.linear-gradient(@startcolor, @stopcolor, bottom-diagonal, @backgroundcolor) {
+    background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, @startcolor), color-stop(1, @stopcolor));//for old webkit syntax
+    .linear-gradient(@startcolor, @stopcolor, 45deg, @backgroundcolor);
+}
+
+.linear-gradient(@startcolor, @stopcolor, @backgroundcolor) when (iscolor(@backgroundcolor)) {
+    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, @startcolor), color-stop(1, @stopcolor));//for old webkit syntax
+    .linear-gradient(@startcolor, @stopcolor, 180deg, @backgroundcolor);
 }
 
 

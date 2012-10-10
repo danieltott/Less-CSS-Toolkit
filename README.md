@@ -251,7 +251,7 @@ Compiles to:
 
 <span id="linear-gradient" />.linear-gradient()
 ---
-Simple, two-color gradient. Assigns a background-color based on a mix of start and end colors. There are a few ways to use it:
+Simple, two-color gradient. If no background color is assigned, assigns a background-color based on a mix of start and end colors. There are a few ways to use it:
 ```css
 .linear-gradient(#0F0, #F00);
 //top to bottom gradient
@@ -259,28 +259,41 @@ Simple, two-color gradient. Assigns a background-color based on a mix of start a
 .linear-gradient(#0F0, #F00, top);
 //top to bottom gradient (exactly the same as the first example)
 
-.linear-gradient(#0F0, #F00, bottom);
-//bottom to top gradient
-
 .linear-gradient(#0F0, #F00, left);
 //left to right gradient
 
-.linear-gradient(#0F0, #F00, right);
-//right to left gradient
+.linear-gradient(#0F0, #F00, top-diagonal)
+//top left to bottom right diagonal
+
+.linear-gradient(#0F0, #F00, bottom-diagonal)
+//bottom left to top right diagonal
 
 .linear-gradient(#0F0, #F00, 45deg);
 //gradient with an angle (does not support old webkit syntax (used in iOS4))
+
+//
+//a background color (including transparent) can be added to _any_ of the above definitions:
+//
+
+.linear-gradient(#0F0, #F00, #00f);
+//top to bottom gradient, with background-color of #00f
+
+.linear-gradient(#0F0, #F00, left, #00f);
+//left to right gradient with background-color of #00f
+
+.linear-gradient(#0F0, #F00, 45deg, transparent);
+//gradient with an angle with background-color of transparent
 ```
 Example:
 ```css
 .example {
-    .linear-gradient(#0F0, #F00);
+    .linear-gradient(#0F0, #F00, transparent);
 }
 ```
 Compiles to:
 ```css
 .example {
-    background-color: #669900;
+    background-color: transparent;
     background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #00ff00), color-stop(0.5, #ff0000));
     background-image: -webkit-linear-gradient(270deg, #00ff00, #ff0000);
     background-image: -o-linear-gradient(270deg, #00ff00, #ff0000);
