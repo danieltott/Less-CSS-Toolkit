@@ -4,11 +4,9 @@ LESS CSS Toolkit
 
 A collection of re-usable LESS CSS Mixins
 
-Daniel T. Ott
-http://dtott.com
+Created by [Dan Ott](http://dtott.com)
 
-Bridget Stewart
-http://sharksandcupcakes.com
+Maintained and improved by Dan Ott and [Bridget Stewart](http://sharksandcupcakes.com)
 
 
 Mixins:<span id="top"></span>
