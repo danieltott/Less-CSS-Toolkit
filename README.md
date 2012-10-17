@@ -30,7 +30,7 @@ Mixins:<span id="top"></span>
 * [transition](#transition)
 
 
-<span id="animation" />.animation(@name, @duration, @timing, @delay: 0, @iterations: infinite, @direction: normal)
+<span id="animation"></span>.animation(@name, @duration, @timing, @delay: 0, @iterations: infinite, @direction: normal)
 ---
 Usage:
 ```css
@@ -49,7 +49,7 @@ Compiles to:
 }
 ```
 
-<span id="keyframe-animation" />.keyframe-animation(@name, @from, @to, @selector, @duration, @timing, @delay: 0, @iterations: infinite, @direction: normal)
+<span id="keyframe-animation"></span>.keyframe-animation(@name, @from, @to, @selector, @duration, @timing, @delay: 0, @iterations: infinite, @direction: normal)
 ---
 This is a little bit of a strange mixin. It requires that you define mixins called `.from()` and `.to()`, which can be namespaced with the `@from` and `@to` variables. The `@selector` is the selector that the actual animations will be applied to.
  
@@ -110,7 +110,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="background-clip" />.background-clip(@clip)
+<span id="background-clip"></span>.background-clip(@clip)
 ---
 Usage:
 ```css
@@ -129,7 +129,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="background-origin" />.background-origin(@origin)
+<span id="background-origin"></span>.background-origin(@origin)
 ---
 Usage:
 ```css
@@ -149,7 +149,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="background-size" />.background-size(@size)
+<span id="background-size"></span>.background-size(@size)
 ---
 Usage:
 ```css
@@ -169,7 +169,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="border-image" />.border-image(@img, @number, @repeat: stretch)
+<span id="border-image"></span>.border-image(@img, @number, @repeat: stretch)
 ---
 Usage:
 ```css
@@ -190,7 +190,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="border-radius" />.border-radius(@radius)
+<span id="border-radius"></span>.border-radius(@radius)
 ---
 Usage:
 ```css
@@ -219,7 +219,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="box-shadow" />.box-shadow(@shadow)
+<span id="box-shadow"></span>.box-shadow(@shadow)
 ---
 Usage:
 ```css
@@ -238,7 +238,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="box-sizing" />.box-sizing(@sizing)
+<span id="box-sizing"></span>.box-sizing(@sizing)
 ---
 Usage:
 ```css
@@ -257,7 +257,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="columns" />.columns(@columnValue, @gap: normal, @rule: none)
+<span id="columns"></span>.columns(@columnValue, @gap: normal, @rule: none)
 ---
 Usage:
 ```css
@@ -282,7 +282,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="clearfix" />.clearfix()
+<span id="clearfix"></span>.clearfix()
 ---
 Uses http://nicolasgallagher.com/micro-clearfix-hack/
 
@@ -309,7 +309,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="linear-gradient" />.linear-gradient()
+<span id="linear-gradient"></span>.linear-gradient()
 ---
 Simple, two-color gradient. If no background color is assigned, assigns a background-color based on a mix of start and end colors. There are a few ways to use it:
 ```css
@@ -364,7 +364,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="button-gradient" />.button-gradient(@startcolor, @midcolor1, @midcolor2, @stopcolor)
+<span id="button-gradient"></span>.button-gradient(@startcolor, @midcolor1, @midcolor2, @stopcolor)
 ---
 Common button gradient style
 
@@ -390,7 +390,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="size" />.size(@width,@height)
+<span id="size"></span>.size(@width,@height)
 ---
 Small mixin to set width and height. That's all it does.
 
@@ -410,7 +410,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="image-replacement" />.image-replacement(@width, @height, @img)
+<span id="image-replacement"></span>.image-replacement(@width, @height, @img)
 ---
 Using the newer Zeldman technique
 
@@ -436,7 +436,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="transform" />.transform(@transform) and .transform-origin(@origin)
+<span id="transform"></span>.transform(@transform) and .transform-origin(@origin)
 ---
 Usage:
 ```css
@@ -461,7 +461,7 @@ Compiles to:
 
 [Back to Top](#top)
 
-<span id="transition" />.transition(@transition)
+<span id="transition"></span>.transition(@transition)
 ---
 Usage:
 ```css
