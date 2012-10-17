@@ -30,7 +30,7 @@ Mixins:<span id="top"></span>
 * [transition](#transition)
 
 
-<span id="animation"></span>.animation(@name, @duration, @timing, @delay: 0, @iterations: infinite, @direction: normal)
+<span id="animation">.animation(@name, @duration, @timing, @delay: 0, @iterations: infinite, @direction: normal)</span>
 ---
 Usage:
 ```css
