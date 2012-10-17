@@ -12,6 +12,7 @@ Maintained and improved by Dan Ott and [Bridget Stewart](http://sharksandcupcake
 Mixins:<span id="top"></span>
 =======
 * [animation](#animation)
+* [keyframe-animation](#keyframe-animation)
 * [background-clip](#background-clip)
 * [background-origin](#background-origin)
 * [background-size](#background-size)
@@ -47,6 +48,65 @@ Compiles to:
     animation: keyframename 2s ease 0 infinite normal;
 }
 ```
+
+<span id="keyframe-animation" />.keyframe-animation(@name, @from, @to, @selector, @duration, @timing, @delay: 0, @iterations: infinite, @direction: normal)
+---
+This is a little bit of a strange mixin. It requires that you define mixins called `.from()` and `.to()`, which can be namespaced with the `@from` and `@to` variables. The `@selector` is the selector that the actual animations will be applied to.
+ 
+Usage:
+```css
+.from(keyframeto) {
+    background: red;
+}
+.to(keyframefrom) {
+    background: black;
+}
+
+.keyframe-animation(testkeyframe, keyframeto, keyframefrom, ".example", 1s, ease);
+```
+Compiles to:
+```css
+@-moz-keyframes testkeyframe {
+    from {
+        background: red;
+    }
+    to {
+        background: black;
+    }
+}
+@-webkit-keyframes testkeyframe {
+    from {
+        background: red;
+    }
+    to {
+        background: black;
+    }
+}
+@-o-keyframes testkeyframe {
+    from {
+        background: red;
+    }
+    to {
+        background: black;
+    }
+}
+@keyframes testkeyframe {
+    from {
+        background: red;
+    }
+    to {
+        background: black;
+    }
+}
+.example {
+    -moz-animation: testkeyframe 1s ease 0 infinite normal;
+    -webkit-animation: testkeyframe 1s ease 0 infinite normal;
+    -ms-animation: testkeyframe 1s ease 0 infinite normal;
+    -o-animation: testkeyframe 1s ease 0 infinite normal;
+    animation: testkeyframe 1s ease 0 infinite normal;
+}
+```
+
 
 [Back to Top](#top)
 

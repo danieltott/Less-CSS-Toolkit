@@ -22,6 +22,45 @@
     animation: @vars;
 }
 
+// http://www.w3.org/TR/css3-animations
+// requires that the user define mixins called .from and .to
+.keyframe-animation(@name, @from, @to, @selector, @duration, @timing, @delay: 0, @iterations: infinite, @direction: normal) {
+    @newline: `"\n"`;
+    (~"@-moz-keyframes @{name} {@{newline}from") {
+
+            .from(@from);
+        }
+        to{
+            .to(@to);
+        }
+    
+    (~"}@-webkit-keyframes @{name} {@{newline}from") {
+
+            .from(@from);
+        }
+        to{
+            .to(@to);
+        }
+    (~"}@-o-keyframes @{name} {@{newline}from") {
+
+            .from(@from);
+        }
+        to{
+            .to(@to);
+        }
+    (~"}@keyframes @{name} {@{newline}from") {
+
+            .from(@from);
+        }
+        to{
+            .to(@to);
+        }
+        (~"}@{newline}@{selector}"){
+            .animation(@name, @duration, @timing, @delay, @iterations,@direction);
+        }
+}
+
+
 // http://www.w3.org/TR/css3-background/#the-background-clip
 
 .background-clip(@clip) {
