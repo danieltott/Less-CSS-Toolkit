@@ -1,0 +1,10 @@
+{
+  "name": "Less-CSS-Toolkit",
+  "version": "v1.0.1",
+  "main": "toolkit.less",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
